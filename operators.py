@@ -18,7 +18,6 @@ def getUimage():
         for j in range(3, 9):
             img[i][j] = 0
 
-    img = img * 255
     return img
 
 # MARK:- operators
@@ -43,8 +42,9 @@ def dilation(img, kernel):
 
 # MARK:- read image
 img = getUimage()
-kernel = cv.getStructuringElement(cv.MORPH_RECT, ksize=(3,3), anchor=(1,0))
-output = dilation(img, kernel)
+kernel = cv.getStructuringElement(cv.MORPH_CROSS, ksize=(3,3), anchor=(1,1))
+print(kernel)
+output = erosion(img, kernel)
 
 # MARK:- show image
 fig = plt.figure(figsize=(8, 8))
