@@ -62,7 +62,6 @@ left_cross_kernel = cv.getStructuringElement(
     cv.MORPH_CROSS, ksize=(3, 3), anchor=(1, 0))
 rect_kernel = cv.getStructuringElement(
     cv.MORPH_RECT, ksize=(3, 3), anchor=(1, 1))
-print(cross_kernel)
 output = erosion(img, cross_kernel)
 output = dilation(output, rect_kernel)
 # output = erosion(output, left_cross_kernel)
