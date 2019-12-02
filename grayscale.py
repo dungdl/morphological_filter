@@ -13,11 +13,8 @@ img = cv.imread('input.jpg', 0)
 # Taking a matrix of size 5 as the kernel 
 kernel = np.ones((5,5), np.uint8) 
 kernel *= 10 
-# The first parameter is the original image, 
-# kernel is the matrix with which image is  
-# convolved and third parameter is the number  
-# of iterations, which will determine how much  
-# you want to erode/dilate a given image.  
+
+# grayscale value is 10
 
 img_erosion = cv.erode(img, kernel, iterations=1)
 img_open = cv.morphologyEx(img, cv.MORPH_OPEN, kernel, iterations=1)
